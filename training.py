@@ -7,38 +7,44 @@ Created on Wed Mar 22 00:55:24 2023
 
 import random
 
-class training:
+class Training:
     
-    def __init__(self, inputs):
+    def __init__(self, inputs, wanted_output):
         self.inputs = inputs
+        self.wanted_output = wanted_output
         
-    def train(self, wantedOutput):
+    def train(self):
         
-        next_inputs = []
-        
-        for neuron in self.inputs:
+        iteration = 0
+        output = 0
+        while output != self.wanted_output:
             
-            actual_inputs = neuron[0]
-            searched_weights = []
+            output = 0
+            searched_weights = [] 
             searched_weight = 0
-            searched_bias = round(random.random(), 2)
+            searched_bias = round(random.uniform(-5, 5), 2)
             
-            neuron_sum = 0
-            
-            for i in range(len(actual_inputs)):
+            for inpt in self.inputs:
                 
-                searched_weight = round(random.random(), 2)
-                neuron_sum += actual_inputs[i] * searched_weight
+                searched_weight = round(random.uniform(-5, 5), 2)
+                output += inpt * searched_weight
                 
                 searched_weights.append(searched_weight)
-
                 
-            neuron_sum += searched_bias
+            output += searched_bias
+            output = round(output, 1)
+            iteration += 1
             
-
+            print(iteration ," Iteration ", self.inputs, searched_weights, searched_bias, " Output ", output)
             
+        return [self.inputs, searched_weights, searched_bias]
+                    
+
+n = [3.0, 2.1, 2.17, 3.18]
+w_out = 2.0
                 
-                
+searched_out = Training(n, w_out)
+searched_out.train()
             
             
             
