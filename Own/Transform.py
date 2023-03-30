@@ -8,7 +8,7 @@ Created on Thu Mar 30 17:34:41 2023
 class ML:
     
     def __init__(self):
-        return
+        pass
     
     def transform(self, arrayToTransform):
         
@@ -18,10 +18,18 @@ class ML:
         for i in range(n):
             for j in range(n):
                 
-                transformedArray[j][i] = arrayToTransform[i][j]
+               transformedArray[j][i] = arrayToTransform[i][j]
                 
 
         return transformedArray
+    
+    def shorterVersionOfTransform(self, arrayToTransform):
+        
+        n = len(arrayToTransform[0])
+        transformedArray = [[arrayToTransform[j][i] for j in range(n)] for i in range(n)]
+        
+        return transformedArray
+        
         
 ml = ML()
 
@@ -32,4 +40,4 @@ MA = [[4, 2, 6, 9],
 
 print(MA)
 
-ml.transform(MA)
+ml.shorterVersionOfTransform(MA)
