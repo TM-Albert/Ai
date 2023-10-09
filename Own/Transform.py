@@ -40,4 +40,8 @@ MA = [[4, 2, 6, 9],
 
 print(MA)
 
-ml.shorterVersionOfTransform(MA)
+shorter_MA = ml.shorterVersionOfTransform(MA)
+transformed_MA = ml.transform(MA)
+
+print(shorter_MA)
+print(transformed_MA)

@@ -27,6 +27,8 @@ output = np.dot(weights, inputs) + biases
 
 print(output)
 
+# =============== Move to another layers =================
+
 inpts = [[1, 2, 3, 2.5],
          [2.0, 5.0, -1.0, 2.0],
          [-1.5, 2.7, 3.3, -0.8]]
@@ -37,7 +39,6 @@ weights = [[0.2, 0.8, -0.5, 1.0],
 
 biases = [2.19, 1.78, 0.5]
 
-print(np.array(weights).T)
-
 anotherOut = np.dot(inpts, np.array(weights).T) + biases
-print(anotherOut)
+
+# == ended watching at 19.04 
