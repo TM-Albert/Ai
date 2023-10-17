@@ -23,3 +23,5 @@ def fit(data, y, learn_rate, epochs):
             [0.4051257858555448, -0.5843519159246258, 0.703376365781059, -0.8848898688558118]
 
             calculated_output = feedforward(x, weights, biases)
+
+            [0.8378112032793879, 0.3378112032793879]
