@@ -11,20 +11,22 @@ import seaborn as sns
 import pandas as pd
 
 
-data_frame = pd.read_csv('./data/Iris.csv')
+iris = pd.read_csv('./data/Iris.csv')
 
 # convert the species column to numeric values
 le = LabelEncoder()
-data_frame['Species'] = le.fit_transform(data_frame['Species'])
+iris['Species'] = le.fit_transform(iris['Species'])
 
 species_name = le.classes_
 
-x = data_frame.drop(columns=['Id', 'Species'])
-y = data_frame['Species']
+x = iris.drop(columns=['Id', 'Species'])
+y = iris['Species']
 
 print(x.head(5))
 print(y.head(5))
 
+# 30% of the data will be used for testing and 70% for training
+# the data is randomly split
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
 
 print(x_train.shape)
