@@ -14,4 +14,19 @@ tensor = tf.constant([[[12., 8., 2.], [4., 2., 7.], [8., 3., 4.]], [[4., 5., 1.]
 print(float_matrix)
 print(tensor)
 
+changeable_tensor = tf.Variable([10, 7])
+unchangeable_tensor = tf.constant([10, 7])
+
+# changing the value of the tensor
+
+changeable_tensor[0].assign(7)
+changeable_tensor[1].assign(10)
+
+# CREATING THE RANDOM TENSORS
+
+random_tensor_1 = tf.random.Generator.from_seed(42)
+random_tensor_1 = random_tensor_1.normal(shape=(5, 4))
+
+random_tensor_2 = tf.random.Generator.from_seed(31)
+random_tensor_2 = random_tensor_2.normal(shape=(2, 6))
 
